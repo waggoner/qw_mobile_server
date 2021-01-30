@@ -1,0 +1,33 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+  height: 100%;
+  width: 100%;
+
+  .login-content {
+    padding-top: 200px;
+    width: 400px;
+    margin: 40px;
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+    h1 {
+      font-size: 1.4em;
+      font-weight: $font-weight-semi-bold;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .flash {
+      font-weight: $font-weight-semi-bold;
+      text-align: center;
+      color: $mango;
+      margin-bottom: 20px;
+    }
+  }
+}

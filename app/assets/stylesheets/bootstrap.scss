@@ -1,0 +1,13 @@
+// Customize Bootstrap Globals
+$font-family-sans-serif: 'Roboto', HelveticaNeue, Arial, sans-serif;
+$font-size-base:         0.9375rem;
+$font-weight-normal:     400;
+$font-weight-medium:     500;
+$font-weight-semi-bold:  600;
+$font-weight-bold:       700;
+
+$body-font:              $font-family-sans-serif;
+$body-bg:                #ffffff;
+$body-color:             #000000;
+
+@import 'bootstrap/scss/bootstrap';
