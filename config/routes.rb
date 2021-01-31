@@ -9,5 +9,12 @@ Rails.application.routes.draw do
     root to: "admin_users#index"
   end
 
+  namespace :api do
+    namespace :v1 do
+      resources :registrations, only: [:create]
+      resources :sessions, only: [:create]
+    end
+  end
+
   root to: 'admin/users#index'
 end

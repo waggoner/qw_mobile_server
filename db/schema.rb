@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_30_161604) do
+ActiveRecord::Schema.define(version: 2021_01_31_013636) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2021_01_30_161604) do
     t.string "api_key"
     t.string "first"
     t.string "last"
-    t.integer "profile_type"
+    t.string "profile_type"
     t.string "affiliation"
     t.datetime "terms_accepted"
     t.datetime "created_at", precision: 6, null: false
