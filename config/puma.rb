@@ -23,7 +23,7 @@ else
   # Set master PID and state locations
   pidfile "#{shared_dir}/pids/puma.pid"
   state_path "#{shared_dir}/pids/puma.state"
-  #activate_control_app
+  activate_control_app
 
   on_worker_boot do
     ActiveRecord::Base.establish_connection if defined?(ActiveRecord)
