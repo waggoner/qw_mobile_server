@@ -1,5 +1,5 @@
 rails_env = ENV['RAILS_ENV'] || "development"
-app_name = 'subhubapp'
+app_name = 'mobile-api'
 
 if rails_env == 'development'
   threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }
