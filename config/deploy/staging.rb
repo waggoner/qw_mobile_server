@@ -1,4 +1,4 @@
-set :application, "mobile-api"
+set :application, "quantwrestling"
 
 set :domain, '3.238.29.52'
 set :deploy_to, '/home/deploy/apps/mobile-api'
@@ -33,9 +33,9 @@ set :rails_assets_groups, :assets
 # set this to the number of versions to keep
 set :keep_assets, 2
 
-role :app, %w{52.55.205.36}
-role :web, %w{52.55.205.36}
-role :db,  %w{52.55.205.36}, :primary => true
+role :app, %w{3.238.29.52}
+role :web, %w{3.238.29.52}
+role :db,  %w{3.238.29.52}, :primary => true
 
 set :ssh_options, {
   user: "deploy",
@@ -43,4 +43,4 @@ set :ssh_options, {
   forward_agent: true
 }
 
-server '52.55.205.36', user: 'deploy', roles: %w{web app db}, primary: true
+server '3.238.29.52', user: 'deploy', roles: %w{web app db}, primary: true
