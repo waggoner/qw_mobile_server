@@ -21,7 +21,7 @@ class UserDashboard < Administrate::BaseDashboard
     api_key: Field::String,
     first: Field::String,
     last: Field::String,
-    profile_type: Field::Number,
+    profile_type: Field::String,
     affiliation: Field::String,
     terms_accepted: Field::DateTime,
     created_at: Field::DateTime,
@@ -38,6 +38,8 @@ class UserDashboard < Administrate::BaseDashboard
   email
   first
   last
+  profile_type
+  affiliation
   sign_in_count
   last_sign_in_at
   ].freeze
@@ -47,19 +49,12 @@ class UserDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
   id
   email
-  encrypted_password
-  reset_password_token
-  reset_password_sent_at
-  sign_in_count
-  current_sign_in_at
-  last_sign_in_at
-  current_sign_in_ip
-  last_sign_in_ip
-  api_key
   first
   last
   profile_type
   affiliation
+  sign_in_count
+  last_sign_in_at
   terms_accepted
   created_at
   updated_at
@@ -70,20 +65,10 @@ class UserDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
   email
-  encrypted_password
-  reset_password_token
-  reset_password_sent_at
-  sign_in_count
-  current_sign_in_at
-  last_sign_in_at
-  current_sign_in_ip
-  last_sign_in_ip
-  api_key
   first
   last
   profile_type
   affiliation
-  terms_accepted
   ].freeze
 
   # COLLECTION_FILTERS

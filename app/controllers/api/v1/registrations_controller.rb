@@ -13,16 +13,27 @@ module Api
         end
       end
 
+      def reset
+        user = User.find_by(email: user_params[:email])
+        if user
+          user.send_reset_password_instructions
+          success_response
+        else
+          error_response [], status: :ok
+        end
+      end
+
       private
 
       def user_params
         params.require(:user).permit(
           :email,
           :password,
-          supervisor_attributes: [
-            :first,
-            :last
-          ]
+          :first,
+          :last,
+          :profile_type,
+          :affiliation,
+          :terms_accepted
         )
       end
 

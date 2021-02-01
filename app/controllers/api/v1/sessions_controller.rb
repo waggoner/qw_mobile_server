@@ -9,7 +9,7 @@ module Api
         if @user
           handle_user_response
         else
-          error_response ["User not found"], status: :ok
+          error_response ["Account not found"], status: :ok
         end
       end
 
