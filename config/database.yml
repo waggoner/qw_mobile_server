@@ -82,5 +82,3 @@ test:
 production:
   <<: *default
   database: mobile_api_production
-  username: mobile_api
-  password: <%= ENV['MOBILE_API_DATABASE_PASSWORD'] %>
