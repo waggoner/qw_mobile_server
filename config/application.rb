@@ -21,11 +21,11 @@ module MobileApi
 
     config.action_mailer.default_url_options = { host: "quantwrestling.com" }
 
-    # config.action_mailer.delivery_method = :sendgrid_actionmailer
-    # config.action_mailer.sendgrid_actionmailer_settings = {
-    #   api_key: Rails.application.credentials.sendgrid[:api_key],
-    #   raise_delivery_errors: true
-    # }
+    config.action_mailer.delivery_method = :sendgrid_actionmailer
+    config.action_mailer.sendgrid_actionmailer_settings = {
+      api_key: Rails.application.credentials.sendgrid[:api_key],
+      raise_delivery_errors: true
+    }
 
   end
 end
