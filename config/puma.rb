@@ -9,6 +9,7 @@ if rails_env == 'development'
 else
   threads threads_count, threads_count
   environment rails_env
+  app_dir = File.expand_path("../..", __FILE__)
   shared_dir = "/home/deploy/apps/#{app_name}/shared"
 
   workers 2
@@ -16,14 +17,15 @@ else
 
   # Set up socket location
   bind "unix://#{shared_dir}/sockets/puma.sock"
+  # Set master PID and state locations
+  pidfile "#{shared_dir}/pids/puma.pid"
+  state_path "#{shared_dir}/pids/puma.state"
+  directory "#{app_dir}"
 
   # Logging
   stdout_redirect "#{shared_dir}/log/puma.stdout.log", "#{shared_dir}/log/puma.stderr.log", true
 
-  # Set master PID and state locations
-  pidfile "#{shared_dir}/pids/puma.pid"
-  state_path "#{shared_dir}/pids/puma.state"
-  activate_control_app
+  activate_control_app "unix://#{shared_dir}/sockets/pumactl.sock"
 
   on_worker_boot do
     ActiveRecord::Base.establish_connection if defined?(ActiveRecord)
