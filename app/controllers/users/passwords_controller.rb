@@ -21,12 +21,13 @@ class Users::PasswordsController < Devise::PasswordsController
   #
 
   def changed
+    puts('sign in and out user here')
   end
 
-  # protected
+  protected
 
   def after_resetting_password_path_for(resource)
-    password_changed_path
+    changed_user_password_path
   end
 
 end

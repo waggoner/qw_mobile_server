@@ -78,4 +78,6 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'qw-mobile.ngrok.io' }
 
+  config.web_console.whitelisted_ips = '104.153.228.211'
+
 end

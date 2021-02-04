@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, only: :passwords, controllers: { passwords: 'users/passwords' }
 
   devise_scope :user do
-    get 'password_changed', to: 'users/passwords#changed'
+    get 'users/password_changed', to: 'users/passwords#changed', as: 'changed_user_password'
   end
 
   namespace :admin do
@@ -19,6 +19,7 @@ Rails.application.routes.draw do
         post :reset, on: :collection
       end
       resources :sessions, only: [:create]
+      resources :users, only: [:update]
     end
   end
 

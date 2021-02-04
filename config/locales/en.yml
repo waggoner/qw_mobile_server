@@ -34,3 +34,8 @@ en:
     sessions:
       new:
         sign_in: 'Sign In'
+  users:
+    passwords:
+      changed:
+        password_changed: "Password Changed"
+        password_changed_instructions: "Your account has been updated successfully. Please login to the app using your new password."
