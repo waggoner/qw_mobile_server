@@ -24,6 +24,9 @@ class UserDashboard < Administrate::BaseDashboard
     profile_type: Field::String,
     affiliation: Field::String,
     terms_accepted: Field::DateTime,
+    is_subscribed: Field::Boolean,
+    expires_at: Field::DateTime,
+    favorites: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -40,14 +43,16 @@ class UserDashboard < Administrate::BaseDashboard
   last
   profile_type
   affiliation
-  sign_in_count
-  last_sign_in_at
+  is_subscribed
+  expires_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
   id
+  is_subscribed
+  expires_at
   email
   first
   last
@@ -56,6 +61,7 @@ class UserDashboard < Administrate::BaseDashboard
   sign_in_count
   last_sign_in_at
   terms_accepted
+  favorites
   created_at
   updated_at
   ].freeze
@@ -69,6 +75,8 @@ class UserDashboard < Administrate::BaseDashboard
   last
   profile_type
   affiliation
+  is_subscribed
+  expires_at
   ].freeze
 
   # COLLECTION_FILTERS

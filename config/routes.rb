@@ -19,7 +19,10 @@ Rails.application.routes.draw do
         post :reset, on: :collection
       end
       resources :sessions, only: [:create]
-      resources :users, only: [:update]
+      resources :users, only: [:show, :update] do
+        post :add_favorite, on: :collection
+        post :remove_favorite, on: :collection
+      end
     end
   end
 
