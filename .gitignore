@@ -39,3 +39,6 @@ yarn-debug.log*
 qw-service.json
 
 /exports/*
+
+#RubyMine
+.idea/

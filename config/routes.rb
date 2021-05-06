@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :admin_users
+    resources :admin_users, only: [:index, :show]
     resources :users, except: [:create, :new, :destroy] do
       get :export, on: :collection
     end
